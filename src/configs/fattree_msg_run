@@ -1,0 +1,26 @@
+
+if ls simlog_* 1> /dev/null 2>&1; then
+    echo "Found sweep files, removing ..."
+    rm simlog_*
+    rm sweep_*
+    rm net_tail_*
+else
+    echo "No sweep files exist, continue ..."
+fi
+
+
+c=1024
+# SEED & ACTIVE_NODES SWEEP (don't be too greedy)
+for a in 1 2 4 8 16 32 64 128 256 512 1024
+# for a in $(seq 0.1 0.1 0.9)
+do
+    b="$((c / a))"
+    for s in $(seq 1 1 1)
+    do
+        # Varying load
+        # ./booksim configs/fattree_msg sim_type=batch seed=${s} batch_injection_rate=${a} routing_function=nca stats_out=net_tail_${a}_${s} > simlog_${a}_${s} &
+
+        # Varying packet sizes
+        ./booksim configs/fattree_msg sim_type=batch seed=${s} packet_size=${a} message_size=${b} routing_function=nca stats_out=net_tail_${a}_${s} > simlog_${a}_${s} &
+    done
+done
