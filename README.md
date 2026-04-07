@@ -21,7 +21,7 @@ Some main modifications/features:
 	- Faulty network configuration
 	- Hotspot configuration
 2. Metrics
-	- Re-ordering latency and re-ordering buffer occupancy (credit: Hans)
+	- Re-ordering latency and re-ordering buffer occupancy
 	- Channel utilization
 	- Blocking time
 3. Topologies
