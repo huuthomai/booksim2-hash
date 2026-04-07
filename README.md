@@ -13,10 +13,6 @@ Nan Jiang, Daniel U. Becker, George Michelogiannakis, James Balfour, Brian Towle
 
 
 -------
-
-## Booksim_THO
-Tho Mai - CSNL KAIST (2023)
-
 Some main modifications/features:
 1. Simulation modes/configurations
     - Message-based simulation
